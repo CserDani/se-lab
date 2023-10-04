@@ -14,9 +14,7 @@ public class TorpedoStore {
 
   private int torpedoCount = 0;
 
-  SecureRandom random = new SecureRandom(); // Compliant for security-sensitive use cases
-  byte bytes[] = new byte[20];
-  random.nextBytes(bytes);
+  private SecureRandom random = new SecureRandom(); // Compliant for security-sensitive use cases
 
   public TorpedoStore(int numberOfTorpedos){
     this.torpedoCount = numberOfTorpedos;
@@ -40,6 +38,8 @@ public class TorpedoStore {
     boolean success = false;
 
     // simulate random overheating of the launcher bay which prevents firing
+    byte[] bytes = new byte[20];
+    this.random.nextBytes(bytes);
     double r = this.random.nextDouble();
     
     if (r >= FAILURE_RATE) {
