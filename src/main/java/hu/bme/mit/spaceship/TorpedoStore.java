@@ -14,7 +14,7 @@ public class TorpedoStore {
 
   private int torpedoCount = 0;
 
-  private SecureRandom random = new SecureRandom(); // Compliant for security-sensitive use cases
+  private Random random = new Random(); 
 
   public TorpedoStore(int numberOfTorpedos){
     this.torpedoCount = numberOfTorpedos;
